@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css'%}" />
+  </head>
+  <body>
+    <h1>Companies Details</h1>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Company Name</th>
+          <th scope="col">Job Title</th>
+          <th scope="col">Job Location</th>
+          <th scope="col">View</th>
+        </tr>
+      </thead>
+      {% for item in all %}
+      <tbody>
+        <!-- <tr>
+      <th scope="row">1</th>
+      <td>{{item.companyName}}</td>
+      <td>{{item.jobTitle}}</td>
+      <td>{{item.jobLocation}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>{{item.companyName}}</td>
+      <td>{{item.jobTitle}}</td>
+      <td>{{item.jobLocation}}</td>
+    </tr> -->
+
+        <tr>
+          <td>{{item.companyName}}</td>
+          <td>{{item.jobTitle}}</td>
+          <td>{{item.jobLocation}}</td>
+          <td>
+            <a
+              href="{% url 'updateCompany' item.id %}"
+              class="btn btn-outline-secondary btn-sm"
+              >Update</a
+            >
+            <a
+              href="{% url 'delete-company' item.id %}"
+              class="btn btn-outline-danger btn-sm"
+              >Delete</a
+            >
+          </td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+
+    <!-- <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> -->
+  </body>
+
+  {%endblock%}
+</html>

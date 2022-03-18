@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="{%  static 'images/nmimsLogo.jpg' %}" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'company_view'%}">Companies</a></li>
+          <li><a href="{% url 'companyForm'%}">FillCompany</a></li>
+          <li><a href="{% url 'join' %}">FillStudent</a></li>
+          <li><a href="{% url 'profiles'%}">student profiles</a></li>
+          <li><a href="{% url 'studentList'%}">studentList</a></li>
+          <li><a href="{% url 'companyList'%}">companyList</a></li>
+        </ul>
+        <form class="d-flex" method="POST" action="{% url 'searchCompany' %}">
+          {% csrf_token %}
+
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search Companies"
+            aria-label="Search"
+            name="searched"
+          />
+          <button class="btn btn-outline-secondary" type="submit">
+            Search
+          </button>
+        </form>
+      </nav>
+      <!-- <a class="cta" href="#"><button>Login</button></a> -->
+    </header>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!-- {%load static%} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+  </head>
+  <body>
+    <!-- <header> -->
+      <!-- <img class="logo" src="{%  static 'images/nmimsLogo.jpg' %}" alt="logo" />
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" data-abc="true">BBBOOTSTRAP</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        > -->
+          <!-- <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="{% url 'home' %}">Home</a></li>
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="{% url 'company_view'%}">Companies</a></li>
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="#">Team</a></li>
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="{% url 'join' %}">Fill Form</a></li>
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="{% url 'profiles'%}">student profiles</a></li>
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="{% url 'studentList'%}">List</a></li>
+            <li  class="nav-item"> <a class="nav-link" href="#" data-abc="true"><a href="{% url 'companyList'%}">companyList</a></li>
+          </ul>
+          <form
+            onsubmit="event.preventDefault()"
+            class="form-inline my-2 my-lg-0"
+          >
+            <input
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="Search"
+            />
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+      <!-- <a class="cta" href="#"><button>Login</button></a>
+    </header> -->
+  </body>
+</html>

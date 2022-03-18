@@ -1,0 +1,32 @@
+<!-- Searching a company -->
+
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css'%}" />
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"rel="nofollow”
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+    crossorigin="anonymous">
+  </head>
+  <body>
+    <center>
+      {% if searched %}
+      <h1>You Searched For {{searched}}</h1>
+      <br />
+      {%for item in company%}<a href="{% url 'show-company' item.id %}"
+        >{{item}}</a
+      >
+      <br />
+      {%endfor%} {% else %}
+      <h1>Hey! You Forgot To Search the Company..</h1>
+      {% endif%}
+    </center>
+  </body>
+  {%endblock%}
+</html>
